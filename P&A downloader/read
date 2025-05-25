@@ -1,92 +1,51 @@
-Spotify Playlist to Google Drive Discord Bot
-A Discord bot that lets you download songs from a Spotify playlist or album by searching and converting them via YouTube, then uploads the MP3 files to your Google Drive.
+# Spotify Playlist to Google Drive Discord Bot
 
-How It Works
-You send the bot a Spotify playlist or album URL in Discord using the command:
-!d <spotify_url>
+A Discord bot that downloads songs from a Spotify playlist or album by searching and converting them via YouTube, then uploads the MP3 files to your Google Drive.
 
-The bot grabs all the songs from the Spotify playlist/album.
+---
 
-For each song, it searches YouTube for the best matching video and downloads the audio as an MP3.
+## How It Works
 
-Once all songs are downloaded, the bot uploads them to a new folder in your Google Drive.
+1. You send the bot a Spotify playlist or album URL in Discord using the command:  
+   `!d <spotify_url>`
 
-The bot then sends you a link to the folder containing your playlist's MP3s.
+2. The bot grabs all the songs from the Spotify playlist or album.
 
-Requirements
-Python 3.8+
+3. For each song, it searches YouTube for the best matching video and downloads the audio as an MP3.
 
-Discord bot token (from Discord Developer Portal)
+4. Once all songs are downloaded, the bot uploads them to a new folder in your Google Drive.
 
-Spotify API credentials (Client ID and Client Secret)
+5. The bot sends you a link to the folder containing your playlist's MP3s.
 
-YouTube Data API key
+---
 
-Google API credentials file (client_secret.json) for Drive API access
+## Requirements
 
-pip packages:
+- Python 3.8 or higher  
+- Discord bot token (from [Discord Developer Portal](https://discord.com/developers/applications))  
+- Spotify API credentials (Client ID and Client Secret)  
+- YouTube Data API key  
+- Google API credentials file (`client_secret.json`) for Drive API access  
+- Python packages:
+  - `discord.py`
+  - `spotipy`
+  - `google-auth-oauthlib`
+  - `google-api-python-client`
+  - `yt-dlp`
+  - `python-dotenv`
 
-discord.py
+---
 
-spotipy
+## Setup Instructions
 
-google-auth-oauthlib
+1. Clone this repository or copy the bot script.
 
-google-api-python-client
+2. Create a `.env` file in the same folder as the script with these variables:
 
-yt-dlp
-
-python-dotenv
-
-Setup Instructions
-Clone this repo or copy the bot script.
-
-Create a .env file in the same folder as the script with these variables:
-
-ini
-Copy
-Edit
-SPOTIFY_CLIENT_ID=your_spotify_client_id_here
-SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
-YOUTUBE_API_KEY=your_youtube_api_key_here
-DISCORD_BOT_TOKEN=your_discord_bot_token_here
-GOOGLE_CLIENT_SECRETS_FILE=client_secret.json
-GOOGLE_TOKEN_PICKLE=token.pickle
-Put your Google Drive API credentials file (client_secret.json) in the same folder.
-
-Install the required Python packages:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Or install them manually:
-
-bash
-Copy
-Edit
-pip install discord.py spotipy google-auth-oauthlib google-api-python-client yt-dlp python-dotenv
-Run the bot script:
-
-bash
-Copy
-Edit
-python bot.py
-On first run, the bot will ask you to authenticate with your Google account via a URL — follow the prompts to allow access.
-
-Invite your bot to your Discord server and use the command:
-
-diff
-Copy
-Edit
-!d <spotify playlist or album URL>
-Notes
-Make sure your bot has permission to read and send messages in your Discord server.
-
-Downloads can take some time depending on playlist size and YouTube availability.
-
-The uploaded files are private to your Google Drive account.
-
-Keep your .env file and Google credentials private and secure.
-
-If you want to add features or run into issues, feel free to ask!
+   ```env
+   SPOTIFY_CLIENT_ID=your_spotify_client_id_here
+   SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
+   YOUTUBE_API_KEY=your_youtube_api_key_here
+   DISCORD_BOT_TOKEN=your_discord_bot_token_here
+   GOOGLE_CLIENT_SECRETS_FILE=client_secret.json
+   GOOGLE_TOKEN_PICKLE=token.pickle
