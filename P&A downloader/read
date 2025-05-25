@@ -49,3 +49,13 @@ A Discord bot that downloads songs from a Spotify playlist or album by searching
    DISCORD_BOT_TOKEN=your_discord_bot_token_here
    GOOGLE_CLIENT_SECRETS_FILE=client_secret.json
    GOOGLE_TOKEN_PICKLE=token.pickle
+
+NOTE
+
+Ensure your bot has permission to read and send messages in your Discord server.
+
+Downloads can take time depending on playlist size and YouTube availability.
+
+Uploaded files are private to your Google Drive account.
+
+Keep your .env file and Google credentials secure.
